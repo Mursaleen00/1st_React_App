@@ -17,6 +17,23 @@ export default function TaxtArea(props) {
         setText(UpperCase);
     }
 
+    function Trim() {
+        let trim = text.trim();
+        setText(trim)
+    }
+
+    function Clear() {
+        setText("");
+    }
+
+    // function Space() {
+    //     let rep = text.replace(/ /g, " ")
+    //     setText(rep)
+    // }
+
+
+
+
     const [text, setText] = useState("");
 
     return (
@@ -24,8 +41,11 @@ export default function TaxtArea(props) {
             <div className="mb-3 container">
                 <h1>{props.heading}</h1>
                 <textarea className="form-control" value={text} onChange={Change} placeholder="Enter Your Text" id="exampleFormControlTextarea1" rows="10"></textarea>
-                <button onClick={LowerCase} className="btn btn-dark m-2">LowerCase</button>
-                <button onClick={UpperCase} className="btn btn-dark m-2">UpperCase</button>
+                <button onClick={LowerCase} className="btn btn-dark m-2">Lower Case</button>
+                <button onClick={UpperCase} className="btn btn-dark m-2">Upper Case</button>
+                <button onClick={Trim} className="btn btn-dark m-2">Trim</button>
+                {/* <button onClick={Space} className="btn btn-dark m-2">Space</button> */}
+                <button onClick={Clear} className="btn btn-dark m-2">Clear</button>
             </div>
         </div>
     )
